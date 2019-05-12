@@ -37,7 +37,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm bg-light navbar-light">
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" />
-          {/* https://www.iconfinder.com/icons/3122432/addiction_coffee_icon
+          {/* https://www.iconfinder.com/icons/451379/break_coffee_cup_rest_tea_icon
           Creative Commons (Attribution 3.0 Unported);
           https://www.iconfinder.com/webalys */}
         </Link>
