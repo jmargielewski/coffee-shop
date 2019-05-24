@@ -46,15 +46,18 @@ h6 {
   width: 30px;
 }
 
-.default-background {
-  /* opacity: 1 !important; */
+.default-background,
+.about-background {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(rgba(255, 157, 10, 0.1), rgba(255, 157, 10, 0.1)); */
   background-position: center;
   background-size: cover;
+}
+
+.about-background {
+  min-height: 60vh;
 }
 
 .footer {
