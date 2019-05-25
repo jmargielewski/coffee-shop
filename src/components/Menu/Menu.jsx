@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Img from 'gatsby-image';
+import shortid from 'shortid';
+import { formatter } from '../../helpers';
 import Title from '../Title';
 
 const getCategories = items => items.reduce(
@@ -15,19 +17,43 @@ const getCategories = items => items.reduce(
 class Menu extends Component {
   state = {
     items: this.props.items.edges,
-    coffeeItems: this.props.items.edges,
+    filteredItems: this.props.items.edges,
     categories: getCategories(this.props.items.edges),
   }
 
+  handleItem = (category) => {
+    const tempItems = [...this.state.items];
+    if (category === 'all') {
+      this.setState(() => ({ filteredItems: tempItems }));
+    } else {
+      const items = tempItems.filter(({ node }) => node.category === category);
+      this.setState(() => ({ filteredItems: items }));
+    }
+  }
+
   render() {
-    const { items, coffeeItems } = this.state;
+    const { items, filteredItems, categories } = this.state;
     if (items.length > 0) {
       return (
         <section className="menu py-5">
           <div className="container">
             <Title title="best of our menu" />
             <div className="row">
-              {coffeeItems.map(({ node }) => (
+              <div className="col-10 mx-auto text-center">
+                {categories.map(category => (
+                  <button
+                    key={shortid.generate()}
+                    type="button"
+                    className="btn btn-yellow text-capitalize m-3"
+                    onClick={() => this.handleItem(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="row">
+              {filteredItems.map(({ node }) => (
                 <div
                   key={node.id}
                   className="col-11 col-md-6 my-3 d-flex mx-auto"
@@ -38,8 +64,8 @@ class Menu extends Component {
                       <h6 className="mb-0">
                         <small>{node.title}</small>
                       </h6>
-                      <h6 className="mb-0 text-yellow">
-                        <small>{node.price}</small>
+                      <h6 className="mb-0 text-brown">
+                        <small>{formatter.format(node.price)}</small>
                       </h6>
                     </div>
                     <p className="text-muted">

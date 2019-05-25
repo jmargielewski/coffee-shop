@@ -26,6 +26,10 @@ h6 {
   color: var(--mainYellow);
 }
 
+.text-brown {
+  color: var(--mainBrown);
+}
+
 .btn-yellow {
   color: var(--mainYellow);
   border-color: var(--mainYellow);
