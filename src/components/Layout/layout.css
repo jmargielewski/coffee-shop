@@ -46,6 +46,10 @@ h6 {
   width: 30px;
 }
 
+.menu {
+  background: var(--mainGrey);
+}
+
 .default-background,
 .about-background {
   min-height: 100vh;
