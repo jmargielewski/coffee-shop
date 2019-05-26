@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import BackgroundSection from '../components/BackgroundSection';
 import SEO from '../components/seo';
-import Info from '../components/Home';
+import { Info } from '../components/Home';
 
 const AboutPage = ({ data }) => (
   <Layout>
