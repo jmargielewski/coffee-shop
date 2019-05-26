@@ -3,7 +3,9 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import BackgroundSection from '../components/BackgroundSection';
 import SEO from '../components/seo';
-import { Info, Menu, Products } from '../components/Home';
+import {
+ Info, Menu, Products, Contact 
+} from '../components/Home';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -16,6 +18,7 @@ const IndexPage = ({ data }) => (
     <Info />
     <Menu items={data.menu} />
     <Products />
+    <Contact />
   </Layout>
 );
 
