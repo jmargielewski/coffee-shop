@@ -2,7 +2,7 @@
 
 Simple page application made in React and Gatsby.
 
-[Live](https://coffee-shop-page.netlify.com/)
+
 
 ### Technologies and libraries
 
